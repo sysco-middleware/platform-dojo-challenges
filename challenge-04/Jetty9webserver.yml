@@ -1,6 +1,7 @@
 ---
 - name: Install and configuare Jetty9 web server
-  hosts: localhost
+  hosts: all 
+  connection: local
   become: true
   become_method: sudo
   tasks:
