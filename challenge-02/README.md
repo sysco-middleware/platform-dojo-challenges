@@ -1,6 +1,5 @@
-# title goes here 
-task description goes here...  
-TODO...  
+# Task
+First commit 
 
 ## example usage
-TODO...
+Nothing to add
