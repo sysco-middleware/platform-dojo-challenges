@@ -1,0 +1,13 @@
+---
+- name: Install and configuare Jetty9 web server
+  hosts: localhost
+  become: true
+  become_method: sudo
+  tasks:
+   - name: apt-get updating repositories update_cache
+     apt: 
+      update_cache: yes
+  tasks:
+   - name: Install Jetty9
+     apt:
+      state: present 
