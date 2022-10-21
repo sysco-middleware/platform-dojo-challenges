@@ -1,34 +1,82 @@
+# Challenge  Platform-dojo-04
+ 
+## Task 1
+Clone the following repo: sysco-middleware/platform-dojo-challenges<br>
+Create your feature branch and push it to the remote origin<br>
+Start coding within the "challenge-04" folder<br>
+Commit and push a small change to the README file within this folder<br>
+
+## Task 2
+Implement an Ansible Playbook which automatically installs and runs: Jetty9 web server
+
+Considerations <br>
+Ubuntu's apt-get catalog must be updated as the first (separate) task of the playbook<br>
+When executing this step, an error might show up due to a broken link in the catalog; you don't need to fix this, but you will need to ignore the error and continue for your playbook to run successfully (the catalog will be updated in spite of the error)<br>
+The playbook must make sure that the correct package is installed and the service up & running<br>
+### Acceptance Criteria<br>
+Your playbook executes properly within Katacoda and you're able to see the Jetty9 landing page in the upper frame<br>
+Your pull request has been reviewed and merged by a code owner
+
+
+####################################################################################################
+
+
+## 1. ssh-keygen setup for Git
 
 ssh-keygen -t ed25519 -C "ganesh.gurudu@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 
 
+## 2. git clone 
+
 git clone -b feature-challenge-04 git@github.com:sysco-middleware/platform-dojo-challenges.git
 cd platform-dojo-challenges
 git status
 #git checkout develop 
 git branch
+
+## 3. checkout feature branch 
+
 git checkout  feature-challenge-04
 git status
 git branch
 cd challenge-04
+
+
+## 4. edit README.md fine 
+
 vi README.md
 git status
+
+
+## 5.add file 
+
 git add .
+
+
+## 6. configure git with credentials 
 
 git config --global user.email "ganesh.	@gmail.com"
 git config --global user.name "GaneshGurudu"
 
-git commit -m "Ganesh challenge-04 "
 
+## 7. commit and push changes 
+
+git commit -m "Ganesh challenge-04 "
 git push origin feature-challenge-04
 
+
+## 8. Add localhost to inventory 
 
 sudo vi /etc/ansible/hosts -- for adding host details 
 
 
-ubuntu $ ansible-playbook Jetty9webserver.yml
+## 9. Ansible Tasks 
+
+Ubuntu catalogue update
+ansible-playbook CatalogUpdate.yml 
+**ubuntu $ ansible-playbook Jetty9webserver.yml**
 \[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
 
 PLAY [Install and configuare Jetty9 web server] *******************************************************************************************************************************************
