@@ -18,11 +18,7 @@
       name: jetty9
       state: started
       
-   - name: Check url response of tomcat on server1
+   - name: Check url response of Jetty9 webserver on server
      uri:
       url: http://localhost:8080
       status_code: 200
-      
-   - name: Check url response of tomcat on server2
-     uri:
-      url: http://localhost:8080
