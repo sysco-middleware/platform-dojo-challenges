@@ -23,60 +23,60 @@ Your pull request has been reviewed and merged by a code owner
 
 ## 1. ssh-keygen setup for Git
 
-ssh-keygen -t ed25519 -C "ganesh.gurudu@gmail.com"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+ssh-keygen -t ed25519 -C "ganesh.gurudu@gmail.com"<br>
+eval "$(ssh-agent -s)"<br>
+ssh-add ~/.ssh/id_ed25519<br>
 
 
 ## 2. git clone 
 
-git clone -b feature-challenge-04 git@github.com:sysco-middleware/platform-dojo-challenges.git
-cd platform-dojo-challenges
-git status
-#git checkout develop 
-git branch
+git clone -b feature-challenge-04 git@github.com:sysco-middleware/platform-dojo-challenges.git<br>
+cd platform-dojo-challenges<br>
+git status<br>
+#git checkout develop <br>
+git branch<br>
 
 ## 3. checkout feature branch 
 
-git checkout  feature-challenge-04
-git status
-git branch
-cd challenge-04
+git checkout  feature-challenge-04<br>
+git status<br>
+git branch<br>
+cd challenge-04<br>
 
 
 ## 4. edit README.md fine 
 
-vi README.md
-git status
+vi README.md<br>
+git status<br>
 
 
 ## 5.add file 
 
-git add .
+git add .<br>
 
 
 ## 6. configure git with credentials 
 
-git config --global user.email "ganesh.	@gmail.com"
-git config --global user.name "GaneshGurudu"
+git config --global user.email "ganesh.	@gmail.com"<br>
+git config --global user.name "GaneshGurudu"<br>
 
 
-## 7. commit and push changes 
+## 7. commit and push changes <br>
 
-git commit -m "Ganesh challenge-04 "
-git push origin feature-challenge-04
+git commit -m "Ganesh challenge-04 "<br>
+git push origin feature-challenge-04<br>
 
 
 ## 8. Add localhost to inventory 
 
-sudo vi /etc/ansible/hosts -- for adding host details 
+sudo vi /etc/ansible/hosts -- for adding host details<br> 
 
 
 ## 9. Ansible Tasks 
 
-Ubuntu catalogue update
-ansible-playbook CatalogUpdate.yml 
-**ubuntu $ ansible-playbook Jetty9webserver.yml**
+Ubuntu catalogue update<br>
+ansible-playbook CatalogUpdate.yml <br>
+**ubuntu $ ansible-playbook Jetty9webserver.yml**<br>
 \[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
 
 PLAY [Install and configuare Jetty9 web server] *******************************************************************************************************************************************
