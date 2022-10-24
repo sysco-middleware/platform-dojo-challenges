@@ -1,0 +1,23 @@
+---
+- name : Install Apache2 Web Server
+  hosts: localhost
+  become: yes
+  
+  vars:
+    package_name: apache2
+  
+  tasks:
+    - name: Make sure apache is installed
+      apt:
+        name: "{{package_name}}"
+        state: present
+
+    - name: Update Firewall
+      ufw: 
+        name: 'Apache'
+        policy: allow
+    
+    - name: Checking your Web Server
+      systemd:
+        name: "{{package_name}}"
+        state: started
