@@ -1,17 +1,32 @@
-
 ---
+
 - hosts: webservers
+
   tasks:
+
    - name: Install Lighttpd server
      apt:
        name: lighttpd
        state: latest
      become: yes
+
    - name: index.html
      copy:
         content: "This is webserver"
         dest: /var/www/html/index.html
+
    - name: restart
      service:
        name: lighttpd
        state: restarted
+
+   - name: checking service status
+     command: systemctl status "{{ item }}"
+     with_items:
+     - lighttpd
+     register: result
+     ignore_errors: yes
+
+   - name: showing report
+     debug:
+      var: result
