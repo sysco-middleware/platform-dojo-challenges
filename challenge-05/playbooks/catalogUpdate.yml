@@ -1,0 +1,13 @@
+---
+- name : Ubuntu catalog update
+
+  hosts: webservers
+
+  connection: local
+  become: yes
+
+  tasks:
+    - name: Update and upgrade apt packages
+      apt: 
+        update_cache: yes
+        upgrade: 'yes' 
