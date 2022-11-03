@@ -1,0 +1,11 @@
+---
+- name : Nginx Server Installation
+  hosts: localhost
+  connection: local
+  become: yes
+  
+  tasks:
+    - name: Install Nginx
+      apt: 
+        name: nginx
+        state: latest
